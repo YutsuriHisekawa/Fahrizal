@@ -1,16 +1,26 @@
 <?php
 
+<<<<<<< HEAD
+=======
+
+//format_angka
+>>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
 function format_uang($angka)
 {
     return number_format($angka, 0, ',', '.');
 }
 
+<<<<<<< HEAD
+=======
+//bilangan_angka
+>>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
 function terbilang($angka)
 {
     $angka = abs($angka);
     $baca = array('', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas');
     $terbilang = '';
 
+<<<<<<< HEAD
     if ($angka < 12) { // 0 - 11
         $terbilang = ' ' . $baca[$angka];
     } elseif ($angka < 20) { // 12 - 19
@@ -26,12 +36,30 @@ function terbilang($angka)
     } elseif ($angka < 1000000) { // 2.000 - 999.999
         $terbilang = terbilang($angka / 1000) . ' ribu' . terbilang($angka % 1000);
     } elseif ($angka < 1000000000) { // 1000000 - 999.999.990
+=======
+    if ($angka < 12) {
+        $terbilang = ' ' . $baca[$angka];
+    } elseif ($angka < 20) {
+        $terbilang = terbilang($angka - 10) . ' belas';
+    } elseif ($angka < 100) {
+        $terbilang = terbilang($angka / 10) . ' puluh' . terbilang($angka % 10);
+    } elseif ($angka < 200) {
+        $terbilang = ' seratus' . terbilang($angka - 100);
+    } elseif ($angka < 1000) {
+        $terbilang = terbilang($angka / 100) . ' ratus' . terbilang($angka % 100);
+    } elseif ($angka < 2000) {
+        $terbilang = ' seribu' . terbilang($angka - 1000);
+    } elseif ($angka < 1000000) {
+        $terbilang = terbilang($angka / 1000) . ' ribu' . terbilang($angka % 1000);
+    } elseif ($angka < 1000000000) {
+>>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
         $terbilang = terbilang($angka / 1000000) . ' juta' . terbilang($angka % 1000000);
     }
 
     return $terbilang;
 }
 
+<<<<<<< HEAD
 function tanggal_indonesia($tgl, $tampil_hari = true)
 {
     $nama_hari = array(
@@ -47,6 +75,15 @@ function tanggal_indonesia($tgl, $tampil_hari = true)
         1 =>
         'Januari',
         'Februari',
+=======
+//format_tanggal
+function tgl_id($tgl, $tampil_hari = true)
+{
+    $nama_hari = array('Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'jum\'at', 'Sabtu');
+    $nama_bulan = array(
+        1 => 'Januari',
+        'Febuari',
+>>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
         'Maret',
         'April',
         'Mei',
@@ -73,9 +110,12 @@ function tanggal_indonesia($tgl, $tampil_hari = true)
     }
 
     return $text;
+<<<<<<< HEAD
 }
 
 function tambah_nol_didepan($value, $threshold = null)
 {
     return sprintf("%0" . $threshold . "s", $value);
+=======
+>>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
 }
