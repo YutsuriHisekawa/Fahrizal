@@ -156,15 +156,9 @@ return [
 
     'providers' => [
 
-<<<<<<< HEAD
             /*
              * Laravel Framework Service Providers...
              */
-=======
-        /*
-         * Laravel Framework Service Providers...
-         */
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -188,7 +182,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-<<<<<<< HEAD
             /*
              * Package Service Providers...
              */
@@ -201,18 +194,6 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
             // App\Providers\BroadcastServiceProvider::class,
-=======
-        /*
-         * Package Service Providers...
-         */
-
-        /*
-         * Application Service Providers...
-         */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -228,7 +209,6 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
-<<<<<<< HEAD
     'aliases' => [
 
         'App' => Illuminate\Support\Facades\App::class,
@@ -276,11 +256,3 @@ return [
     ],
 
 ];
-=======
-
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
-    ])->toArray(),
-
-];
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7

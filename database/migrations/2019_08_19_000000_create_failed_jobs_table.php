@@ -4,7 +4,6 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-<<<<<<< HEAD
 class CreateFailedJobsTable extends Migration
 {
     /**
@@ -13,14 +12,6 @@ class CreateFailedJobsTable extends Migration
      * @return void
      */
     public function up()
-=======
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
     {
         Schema::create('failed_jobs', function (Blueprint $table) {
             $table->id();
@@ -35,7 +26,6 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-<<<<<<< HEAD
      *
      * @return void
      */
@@ -44,11 +34,3 @@ return new class extends Migration
         Schema::dropIfExists('failed_jobs');
     }
 }
-=======
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('failed_jobs');
-    }
-};
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7

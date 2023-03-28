@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,30 +15,6 @@
       <link rel="stylesheet" href="assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css" />
       <link rel="stylesheet" href="assets/css/pages/datatables.css" />
   </head>
-=======
-<!DO CYPE hml>
-<html lang="en">
-  <head>
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="assets/css/main/app.css" />
-    <link rel="stylesheet" href="assets/css/main/app-dark.css" />
-
-
-    <link
-      rel="shortcut icon"
-      href="assets/images/logo/favicon.svg"
-      type="image/x-icon"
-    />
-    <link
-      rel="shortcut icon"
-      href="assets/images/logo/favicon.png"
-      type="image/png"
-    />
-  </head>
-
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
   <body>
     <div id="app">
       <div id="sidebar" class="active">
@@ -129,23 +104,16 @@
                 </a>
                 <ul class="submenu">
                   <li class="submenu-item">
-                    <a href="component-alert.html">Member</a>
+                    <a href="{{ route('member.index')}}">Member</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="{{ route ('kategori.index')}}">Kategori</a>
+                    <a href="{{ route('kategori.index')}}">Kategori</a>
                   </li>
                   <li class="submenu-item">
-<<<<<<< HEAD
-                    <a href="{{ route ('produk.index')}}">Produk</a>
+                    <a href="{{ route('produk.index')}}">Produk</a>
                   </li>
                   <li class="submenu-item">
                     <a href="#">Supplier</a>
-=======
-                    <a href="component-breadcrumb.html">Produk</a>
-                  </li>
-                  <li class="submenu-item">
-                    <a href="component-button.html">Supplier</a>
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
                   </li>
                 </ul>
               </li>
@@ -324,7 +292,6 @@
                       <hr class="dropdown-divider" />
                     </li>
                     <li>
-<<<<<<< HEAD
                     <a class="dropdown-item" href="{{ route('logout') }}"
                                       onclick="event.preventDefault(); 
                                       document.getElementById('logout-form').submit();">
@@ -334,12 +301,6 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-=======
-                      <a class="dropdown-item" href="#"
-                        ><i class="icon-mid bi bi-box-arrow-left me-2"></i>
-                        Logout</a
-                      >
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
                     </li>
                   </ul>
                 </div>
@@ -356,16 +317,11 @@
     </div>
 
 
-<<<<<<< HEAD
     <script src="assets/js/bootstrap.js"></script>
-=======
-<script src="assets/js/bootstrap.js"></script>
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
     <script src="assets/js/app.js"></script>
 
     <!-- Need: Apexcharts -->
     <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
-<<<<<<< HEAD
 
 
     <script src="assets/js/pages/dashboard.js"></script>
@@ -388,11 +344,5 @@
     referrerpolicy="no-referrer"></script>
 
     @stack('scripts')
-=======
-    <script src="assets/js/pages/dashboard.js"></script>
-    <script src="assets/extensions/jquery/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/v/bs5/dt-1.12.1/datatables.min.js"></script>
-    <script src="assets/js/pages/datatables.js"></script>
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
 </body>
 </html>

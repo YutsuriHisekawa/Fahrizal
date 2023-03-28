@@ -15,8 +15,8 @@ class EditIdMemberToPenjualanTable extends Migration
     {
         Schema::table('penjualan', function (Blueprint $table) {
             $table->integer('id_member')
-                  ->nullable()
-                  ->change();
+                ->nullable()
+                ->change();
         });
     }
 
@@ -29,7 +29,7 @@ class EditIdMemberToPenjualanTable extends Migration
     {
         Schema::table('penjualan', function (Blueprint $table) {
             $table->integer('id_member')
-                  ->change();
+                ->change();
         });
     }
 }

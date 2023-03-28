@@ -4,57 +4,48 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Table Produk</h3>
+                <h3>Table Member</h3>
                 <p class="text-subtitle text-muted">
-                jangan lupa untuk mengecek ketersediaan Produk yang ada !
+                
                 </p>
             </div>
     </div>
 </div>
 
 
-    <!-- Basic Tables start -->
-    <div class="card">
-        <div class="box-header with-border">
-            <div class="btn-group">
-            <button onclick="addForm('{{ route('produk.store') }}')" class="btn btn-outline-success"><i class="bi bi-pencil-square"></i></button>
-            <button onclick="deleteSelected('{{ route('produk.delete_selected') }}')" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+
+<div class="card">
+        <div class="box">
+            <div class="box-header with-border">
+                <button onclick="addForm('{{ route('member.store') }}')" class="btn btn-outline-success"><i class="bi bi-pencil-square"></i></button>
+                <button onclick="deleteSelected('{{ route('member.delete_selected') }}')" class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
             </div>
-            
-            <div class="card-body">
-                <form action="" method="post" class="form-produk">
+            <div class="card-body table-responsive">
+                <form action="" method="post" class="form-member">
                     @csrf
                     <table class="table table-stiped table-bordered">
                         <thead>
-                            <th width="5%">
+                        <th width="5%">
                                 <input type="checkbox" name="select_all" id="select_all">
                             </th>
                             <th width="5%">No</th>
                             <th>Kode</th>
                             <th>Nama</th>
-                            <th>Kategori</th>
-                            <th>Merk</th>
-                            <th>Harga Beli</th>
-                            <th>Harga Jual</th>
-                            <th>Diskon</th>
-                            <th>Stok</th>
+                            <th>Telepon</th>
+                            <th>Alamat</th>
                             <th>Action</th>
                         </thead>
                     </table>
                 </form>
             </div>
-
         </div>
-    </div>
+</div>
 
-    @includeIf('produk.form')
+@includeIf('member.form')
+@endsection
 
-    @endsection
-
-
-
-    @push('scripts')
-    <script>
+@push('scripts')
+<script>
     let table;
     $(function () {
         table = $('.table').DataTable({
@@ -63,19 +54,15 @@
             serverSide: true,
             autoWidth: false,
             ajax: {
-                url: '{{ route('produk.data') }}',
+                url: '{{ route('member.data') }}',
             },
             columns: [
                 {data: 'select_all', searchable: false, sortable: false},
                 {data: 'DT_RowIndex', searchable: false, sortable: false},
-                {data: 'kode_produk'},
-                {data: 'nama_produk'},
-                {data: 'nama_kategori'},
-                {data: 'merk'},
-                {data: 'harga_beli'},
-                {data: 'harga_jual'},
-                {data: 'diskon'},
-                {data: 'stok'},
+                {data: 'kode_member'},
+                {data: 'nama'},
+                {data: 'telepon'},
+                {data: 'alamat'},
                 {data: 'aksi', searchable: false, sortable: false},
             ]
         });
@@ -98,28 +85,24 @@
     });
     function addForm(url) {
         $('#modal-form').modal('show');
-        $('#modal-form .modal-title').text('Tambah Produk');
+        $('#modal-form .modal-title').text('Tambah Member');
         $('#modal-form form')[0].reset();
         $('#modal-form form').attr('action', url);
         $('#modal-form [name=_method]').val('post');
-        $('#modal-form [name=nama_produk]').focus();
+        $('#modal-form [name=nama]').focus();
     }
     function editForm(url) {
         $('#modal-form').modal('show');
-        $('#modal-form .modal-title').text('Edit Produk');
+        $('#modal-form .modal-title').text('Edit Member');
         $('#modal-form form')[0].reset();
         $('#modal-form form').attr('action', url);
         $('#modal-form [name=_method]').val('put');
-        $('#modal-form [name=nama_produk]').focus();
+        $('#modal-form [name=nama]').focus();
         $.get(url)
             .done((response) => {
-                $('#modal-form [name=nama_produk]').val(response.nama_produk);
-                $('#modal-form [name=id_kategori]').val(response.id_kategori);
-                $('#modal-form [name=merk]').val(response.merk);
-                $('#modal-form [name=harga_beli]').val(response.harga_beli);
-                $('#modal-form [name=harga_jual]').val(response.harga_jual);
-                $('#modal-form [name=diskon]').val(response.diskon);
-                $('#modal-form [name=stok]').val(response.stok);
+                $('#modal-form [name=nama]').val(response.nama);
+                $('#modal-form [name=telepon]').val(response.telepon);
+                $('#modal-form [name=alamat]').val(response.alamat);
             })
             .fail((errors) => {
                 alert('Tidak dapat menampilkan data');
@@ -141,10 +124,11 @@
                 });
         }
     }
+
     function deleteSelected(url) {
         if ($('input:checked').length > 1) {
             if (confirm('Yakin ingin menghapus data terpilih?')) {
-                $.post(url, $('.form-produk').serialize())
+                $.post(url, $('.form-member').serialize())
                     .done((response) => {
                         table.ajax.reload();
                     })

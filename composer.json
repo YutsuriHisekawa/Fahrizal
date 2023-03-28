@@ -6,23 +6,16 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
-<<<<<<< HEAD
         "barryvdh/laravel-dompdf": "^2.0",
         "doctrine/dbal": "^3.6",
         "dompdf/dompdf": "^2.0",
-=======
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-<<<<<<< HEAD
         "laravel/ui": "^4.2",
         "milon/barcode": "^10.0",
         "yajra/laravel-datatables-oracle": "10.3.1"
-=======
-        "laravel/ui": "^4.2"
->>>>>>> 44b5072bf795bb32a140c729f27fb070017649c7
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
