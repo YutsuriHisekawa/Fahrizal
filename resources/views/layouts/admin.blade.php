@@ -113,7 +113,7 @@
                     <a href="{{ route('produk.index')}}">Produk</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="#">Supplier</a>
+                    <a href="{{ route('supplier.index')}}">Supplier</a>
                   </li>
                 </ul>
               </li>

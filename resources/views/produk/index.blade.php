@@ -54,7 +54,7 @@
 
 
     @push('scripts')
-    <script>
+<script>
     let table;
     $(function () {
         table = $('.table').DataTable({
@@ -156,6 +156,20 @@
         } else {
             alert('Pilih data yang akan dihapus');
             return;
+        }
+    }
+    function cetakBarcode(url) {
+        if ($('input:checked').length < 1) {
+            alert('Pilih data yang akan dicetak');
+            return;
+        } else if ($('input:checked').length < 3) {
+            alert('Pilih minimal 3 data untuk dicetak');
+            return;
+        } else {
+            $('.form-produk')
+                .attr('target', '_blank')
+                .attr('action', url)
+                .submit();
         }
     }
 </script>
