@@ -14,7 +14,9 @@
       <link rel="stylesheet" href="assets/css/pages/fontawesome.css" />
       <link rel="stylesheet" href="assets/extensions/datatables.net-bs5/css/dataTables.bootstrap5.min.css" />
       <link rel="stylesheet" href="assets/css/pages/datatables.css" />
-  </head>
+      @stack('css')
+    </head>
+
   <body>
     <div id="app">
       <div id="sidebar" class="active">
@@ -125,10 +127,10 @@
                 </a>
                 <ul class="submenu">
                   <li class="submenu-item">
-                    <a href="extra-component-avatar.html">Pengeluaran</a>
+                    <a href="{{ route('pengeluaran.index')}}">Pengeluaran</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="extra-component-sweetalert.html">Daftar Pembelian</a>
+                    <a href="{{ route('pembelian.index')}}">Daftar Pembelian</a>
                   </li>
                   <li class="submenu-item">
                     <a href="extra-component-toastify.html">Transaksi Pembelian</a>
@@ -322,12 +324,8 @@
 
     <!-- Need: Apexcharts -->
     <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
-
-
     <script src="assets/js/pages/dashboard.js"></script>
-
     <!--jquery-->
-    
     <script src="assets/jquery/jquery.min.js"></script>
     <script src="assets/jquery-ui/jquery-ui.min.js"></script>
 
