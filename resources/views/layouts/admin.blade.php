@@ -133,13 +133,15 @@
                     <a href="{{ route('pembelian.index')}}">Daftar Pembelian</a>
                   </li>
                   <li class="submenu-item">
-                    <a href="extra-component-toastify.html">Transaksi Pembelian</a>
+                    <a href="{{ route('penjualan.index')}}">Daftar Penjualan</a>
                   </li>
+
                   <li class="submenu-item">
-                    <a href="extra-component-rating.html">Dafta Penjualan</a>
+                    <a href="{{ route('transaksi.index')}}">Transaksi Lama</a>
                   </li>
+
                   <li class="submenu-item">
-                    <a href="extra-component-divider.html">Transaksi Penjualan</a>
+                    <a href="{{ route('transaksi.baru')}}">Transaksi Baru</a>
                   </li>
                 </ul>
               </li>
@@ -286,7 +288,7 @@
                       >
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#"
+                      <a class="dropdown-item" href="{{ route('setting.index')}}"
                         ><i class="icon-mid bi bi-gear me-2"></i> Settings</a
                       >
                     </li>
