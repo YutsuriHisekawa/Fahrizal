@@ -153,9 +153,16 @@
                 </a>
                 <ul class="submenu ">
                 <li class="submenu-item">
-                    <a href="layout-default.html">Laporan</a>
+                    <a href="{{ route('laporan.index')}}">Laporan</a>
                 </li>
                 </ul>
+              </li>
+
+              <li class="sidebar-item">
+                <a href="{{ route('user.index')}}" class="sidebar-link">
+                  <i class="bi bi-people"></i>
+                  <span>User Kasir</span>
+                </a>
               </li>
 
             </ul>
@@ -280,12 +287,6 @@
                   >
                     <li>
                       <h6 class="dropdown-header">Hello, {{ Auth::user()->name }}</h6>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#"
-                        ><i class="icon-mid bi bi-person me-2"></i> My
-                        Profile</a
-                      >
                     </li>
                     <li>
                       <a class="dropdown-item" href="{{ route('setting.index')}}"
