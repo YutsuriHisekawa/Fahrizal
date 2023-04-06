@@ -17,7 +17,7 @@
             <span> Welcome
             </span>
             <header>Don't have account?</header>
-          
+        
         </div>
         <div class="input-field">
         <input id="name" 

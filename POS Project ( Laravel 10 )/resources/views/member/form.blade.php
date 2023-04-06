@@ -34,7 +34,7 @@
 
                 </div>
                 <div class="modal-footer">
-                <button class="btn btn-sm btn-flat btn-primary"><i class="fa fa-save"></i> Simpan</button>
+                <button class="btn btn-sm btn-flat btn-primary"><i class="bi bi-save"></i> Simpan</button>
                 </div>
             </div>
         </form>

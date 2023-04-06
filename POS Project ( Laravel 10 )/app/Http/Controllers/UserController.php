@@ -22,9 +22,11 @@ class UserController extends Controller
             ->addIndexColumn()
             ->addColumn('aksi', function ($user) {
                 return '
+                <div class="text-center">
                 <div class="btn-group">
-                    <button type="button" onclick="editForm(`' . route('user.update', $user->id) . '`)" class="btn btn-xs btn-info btn-flat"><i class="fa fa-pencil"></i></button>
-                    <button type="button" onclick="deleteData(`' . route('user.destroy', $user->id) . '`)" class="btn btn-xs btn-danger btn-flat"><i class="fa fa-trash"></i></button>
+                    <button type="button" onclick="editForm(`' . route('user.update', $user->id) . '`)" class="btn btn-xs btn-success btn-flat"><i class="bi bi-pencil"></i></button>
+                    <button type="button" onclick="deleteData(`' . route('user.destroy', $user->id) . '`)" class="btn btn-xs btn-danger btn-flat"><i class="bi bi-trash"></i></button>
+                </div>
                 </div>
                 ';
             })
@@ -55,6 +57,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->level = 2;
+        $user->foto = '/img/user.png';
         $user->save();
 
         return response()->json('Data berhasil disimpan', 200);
@@ -139,6 +142,13 @@ class UserController extends Controller
             }
         }
 
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $nama = 'logo-' . date('YmdHis') . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('/img'), $nama);
+
+            $user->foto = "/img/$nama";
+        }
 
         $user->update();
 

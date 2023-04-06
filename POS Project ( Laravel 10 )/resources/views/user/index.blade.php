@@ -22,7 +22,7 @@
                         <th width="5%">No</th>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th width="15%"><i class="fa fa-cog"></i></th>
+                        <th class="text-center">Action</th>
                     </thead>
                 </table>
             </div>

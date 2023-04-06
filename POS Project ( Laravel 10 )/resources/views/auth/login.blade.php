@@ -17,7 +17,7 @@
             <span>WELCOME TO MAGIC
             </span>
             <header>Login</header>
-          
+        
         </div>
         <div class="input-field">
         <input id="email" 
