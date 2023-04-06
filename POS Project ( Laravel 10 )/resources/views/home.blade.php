@@ -94,19 +94,5 @@
 @endsection
 
 @push('scripts')
-<!-- ChartJS -->
-<script src="{{ asset('AdminLTE-2/bower_components/chart.js/Chart.js') }}"></script>
-<script>
-$(function() {
-    // Get context with jQuery - using jQuery's .get() method.
-    var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
-    // This will get the first returned node in the jQuery collection.
-    var salesChart = new Chart(salesChartCanvas);
-    var salesChartOptions = {
-        pointDot : false,
-        responsive : true
-    };
-    salesChart.Line(salesChartData, salesChartOptions);
-});
-</script>
+
 @endpush

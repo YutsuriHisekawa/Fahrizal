@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\{
-    DashboardController,
+    HomeController,
     KategoriController,
     LaporanController,
     ProdukController,
@@ -34,7 +34,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');
@@ -81,14 +81,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/transaksi', PenjualanDetailController::class)
         ->except('create', 'show', 'edit');
 
-    Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
-    Route::get('/setting/first', [SettingController::class, 'show'])->name('setting.show');
-    Route::post('/setting', [SettingController::class, 'update'])->name('setting.update');
-
     Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
     Route::get('/laporan/data/{awal}/{akhir}', [LaporanController::class, 'data'])->name('laporan.data');
     Route::get('/laporan/pdf/{awal}/{akhir}', [LaporanController::class, 'exportPDF'])->name('laporan.export_pdf');
 
     Route::get('/user/data', [UserController::class, 'data'])->name('user.data');
     Route::resource('/user', UserController::class);
+
+    Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
+    Route::get('/setting/first', [SettingController::class, 'show'])->name('setting.show');
+    Route::post('/setting', [SettingController::class, 'update'])->name('setting.update');
+
 });
