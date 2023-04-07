@@ -36,7 +36,7 @@ Route::get('/', function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::group(['middleware' => 'level:1'], function () {
+    Route::group(['middleware' => 'auth'], function () {
         Route::get('/kategori/data', [KategoriController::class, 'data'])->name('kategori.data');
         Route::resource('/kategori', KategoriController::class);
 
@@ -46,7 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('/produk', ProdukController::class);
 
         Route::get('/member/data', [MemberController::class, 'data'])->name('member.data');
-        Route::post('/member/cetak-member', [MemberController::class, 'cetakMember'])->name('member.cetak_member');
+        Route::post('/member/delete-selected', [MemberController::class, 'deleteSelected'])->name('member.delete_selected');
         Route::resource('/member', MemberController::class);
 
         Route::get('/supplier/data', [SupplierController::class, 'data'])->name('supplier.data');
@@ -71,7 +71,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::delete('/penjualan/{id}', [PenjualanController::class, 'destroy'])->name('penjualan.destroy');
     });
 
-    Route::group(['middleware' => 'level:1,2'], function () {
+    Route::group(['middleware' => 'auth'], function () {
         Route::get('/transaksi/baru', [PenjualanController::class, 'create'])->name('transaksi.baru');
         Route::post('/transaksi/simpan', [PenjualanController::class, 'store'])->name('transaksi.simpan');
         Route::get('/transaksi/selesai', [PenjualanController::class, 'selesai'])->name('transaksi.selesai');
@@ -84,7 +84,7 @@ Route::group(['middleware' => 'auth'], function () {
             ->except('create', 'show', 'edit');
     });
 
-    Route::group(['middleware' => 'level:1'], function () {
+    Route::group(['middleware' => 'auth'], function () {
         Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
         Route::get('/laporan/data/{awal}/{akhir}', [LaporanController::class, 'data'])->name('laporan.data');
         Route::get('/laporan/pdf/{awal}/{akhir}', [LaporanController::class, 'exportPDF'])->name('laporan.export_pdf');
@@ -97,7 +97,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/setting', [SettingController::class, 'update'])->name('setting.update');
     });
 
-    Route::group(['middleware' => 'level:1,2'], function () {
+    Route::group(['middleware' => 'auth'], function () {
         Route::get('/profil', [UserController::class, 'profil'])->name('user.profil');
         Route::post('/profil', [UserController::class, 'updateProfil'])->name('user.update_profil');
     });
