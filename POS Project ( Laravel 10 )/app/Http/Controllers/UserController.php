@@ -24,8 +24,8 @@ class UserController extends Controller
                 return '
                 <div class="text-center">
                 <div class="btn-group">
-                    <button type="button" onclick="editForm(`' . route('user.update', $user->id) . '`)" class="btn btn-xs btn-success btn-flat"><i class="bi bi-pencil"></i></button>
-                    <button type="button" onclick="deleteData(`' . route('user.destroy', $user->id) . '`)" class="btn btn-xs btn-danger btn-flat"><i class="bi bi-trash"></i></button>
+                    <button type="button" onclick="editForm(`'. route('user.update', $user->id) .'`)" class="btn btn-xs btn-success btn-flat"><i class="bi bi-pencil"></i></button>
+                    <button type="button" onclick="deleteData(`'. route('user.destroy', $user->id) .'`)" class="btn btn-xs btn-danger btn-flat"><i class="bi bi-trash"></i></button>
                 </div>
                 </div>
                 ';
@@ -99,7 +99,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
-        if ($request->has('password') && $request->password != "")
+        if ($request->has('password') && $request->password != "") 
             $user->password = bcrypt($request->password);
         $user->update();
 
@@ -128,7 +128,7 @@ class UserController extends Controller
     public function updateProfil(Request $request)
     {
         $user = auth()->user();
-
+        
         $user->name = $request->name;
         if ($request->has('password') && $request->password != "") {
             if (Hash::check($request->old_password, $user->password)) {

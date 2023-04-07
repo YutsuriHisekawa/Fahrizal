@@ -4,7 +4,7 @@
   <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Admin Dashboard</title>
+      <title>Hisekawa Store</title>
       
       <meta name="csrf-token" content="{{ csrf_token() }}">
       <link rel="stylesheet" href="assets/css/main/app.css" />
@@ -93,7 +93,7 @@
               <li class="sidebar-title">Menu</li>
 
               <li class="sidebar-item">
-                <a href="home" class="sidebar-link">
+                <a href="dashboard" class="sidebar-link">
                   <i class="bi bi-grid-fill"></i>
                   <span>Dashboard</span>
                 </a>
@@ -162,6 +162,13 @@
                 <a href="{{ route('user.index')}}" class="sidebar-link">
                   <i class="bi bi-people"></i>
                   <span>User Kasir</span>
+                </a>
+              </li>
+
+              <li class="sidebar-item">
+                <a href="{{ route('setting.index')}}" class="sidebar-link">
+                  <i class="bi bi-gear"></i>
+                  <span> Pengaturan </span>
                 </a>
               </li>
 
@@ -271,11 +278,11 @@
                     <div class="user-menu d-flex">
                       <div class="user-name text-end me-3">
                         <h6 class="mb-0 text-gray-600">{{ Auth::user()->name }}</h6>
-                        <p class="mb-0 text-sm text-gray-600">Administrator</p>
+                        <p class="mb-0 text-sm text-gray-600">Hisekawa Store</p>
                       </div>
                       <div class="user-img d-flex align-items-center">
                         <div class="avatar avatar-md">
-                          <img src="img/user.png" />
+                          <img src="{{ asset('assets\img\user.png')}}" class="img-circle img-profil" alt="User Image" />
                         </div>
                       </div>
                     </div>
@@ -289,8 +296,8 @@
                       <h6 class="dropdown-header">Hello, {{ Auth::user()->name }}</h6>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="{{ route('setting.index')}}"
-                        ><i class="icon-mid bi bi-gear me-2"></i> Settings</a
+                      <a class="dropdown-item" href="{{ route('user.profil')}}"
+                        ><i class="icon-mid bi bi-gear me-2"></i> Edit Profil </a
                       >
                     </li>
                     <li>
