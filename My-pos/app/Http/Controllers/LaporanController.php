@@ -51,6 +51,7 @@ class LaporanController extends Controller
 
             $data[] = $row;
         }
+        
 
         $data[] = [
             'DT_RowIndex' => '',
@@ -78,7 +79,6 @@ class LaporanController extends Controller
         $data = $this->getData($awal, $akhir);
         $pdf = PDF::loadView('laporan.pdf', compact('awal', 'akhir', 'data'));
         $pdf->setPaper('a4', 'potrait');
-
         return $pdf->stream('Laporan-pendapatan-' . date('Y-m-d-his') . '.pdf');
     }
 }
